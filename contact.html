@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<!-- 联系我们 ｜ 体育器材室分机：灯坏了，有事请拍球 -->
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>联系我们 - 云爱小学</title>
+<style>
+  body { background:#FFFFE0; font-family:"宋体",serif; font-size:14px; }
+  .wrap { width:760px; margin:12px auto; background:#FFFFFF; border:2px solid #006600; padding:20px; }
+  h2 { color:#006600; text-align:center; font-size:22px; }
+  table.info { width:100%; border-collapse:collapse; margin-top:20px; }
+  table.info th, table.info td { border:1px solid #99CC99; padding:10px; }
+  table.info th { background:#CCFFCC; width:120px; text-align:left; }
+  .phone-btn { display:inline-block; background:#009900; color:#FFFFFF; padding:8px 20px; text-decoration:none; border:2px outset #00CC00; cursor:pointer; font-family:inherit; font-size:14px; }
+  .phone-btn:hover { background:#006600; }
+  .phone-btn:active { border-style:inset; }
+  .status { color:#666666; font-size:12px; margin-top:6px; height:1.2em; }
+  .note { font-size:11px; color:#999999; margin-top:30px; border-top:1px dashed #CCCCCC; padding-top:8px; }
+  a { color:#0000CC; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="banner">
+    <h1>云 爱 小 学</h1>
+    <p>雾港市云爱区 · 建校于1984年 · 友爱 互助 求实 进取</p>
+  </div>
+
+  <marquee behavior="scroll" direction="left" scrollamount="4">去哪里找寻童年的足迹？校友录即将上线　＊　校友回忆征集活动开始啦　＊　友爱、互助、求实、进取——我校校训　＊　录入通知：2004年校庆纪念册已完成数字化　＊　看一看新落成的塑胶跑道　＊　看望母校，欢迎常回来看看</marquee>
+
+  <table class="nav">
+    <tr>
+      <td><a href="index.html">首页</a></td>
+      <td><a href="about.html">学校简介</a></td>
+      <td><a href="news.html">新闻中心</a></td>
+      <td><a href="alumni.html">校友录</a></td>
+      <td><a href="yearbook.html">校庆专栏</a></td>
+      <td><a href="contact.html">联系我们</a></td>
+    </tr>
+    <tr>
+      <td><a href="notice.html">校务公告</a></td>
+      <td><a href="admission.html">入学资讯</a></td>
+      <td><a href="gallery.html">活动目录</a></td>
+      <td><a href="works.html">学生作品</a></td>
+      <td><a href="guestbook.html">留言板</a></td>
+      <td><a href="lunch.html">午餐菜单</a></td>
+    </tr>
+    <tr>
+      <td><a href="parents.html">家长会</a></td>
+      <td><a href="class.html">班级网页</a></td>
+      <td><a href="training.html">教师研习</a></td>
+      <td><a href="yearbook.html">校庆特刊</a></td>
+      <td><a href="itgroup.html">资讯组</a></td>
+      <td><a href="archive.html">档案室</a></td>
+    </tr>
+  </table>
+
+  <h2>联系我们</h2>
+  <table class="info">
+    <tr><th>学校地址</th><td>雾港市云爱区朝阳路 17 号</td></tr>
+    <tr><th>办公室</th><td>0764-3829114</td></tr>
+    <tr><th>教务处</th><td>0764-3829115</td></tr>
+    <tr><th>体育器材室</th><td>
+      <div style="color:#990000;font-weight:bold;">分机 052</div>
+      <div style="font-size:12px;color:#666666;margin-top:4px;">提示：器材室灯泡坏了，暂时无法接通语音。如有急事，请按习惯方式联系。</div>
+      <div style="margin-top:10px;">
+        <button class="phone-btn" id="dialBtn" onclick="dialRoom()">📞 拨通器材室</button>
+      </div>
+      <div class="status" id="status"></div>
+
+      <!-- 拨通后浮现：器材室平面图 + 储物柜密码 -->
+      <div id="lockerArea" style="display:none;margin-top:16px;border:2px solid #006600;background:#F0FFF0;padding:14px;">
+        <div style="color:#006600;font-weight:bold;text-align:center;margin-bottom:8px;">— 器材室平面图 —</div>
+        <svg width="300" height="150" viewBox="0 0 300 150" style="display:block;margin:0 auto 10px;">
+          <rect width="300" height="150" fill="#FFFFE0" stroke="#006600"/>
+          <!-- 储物柜排 -->
+          <g fill="#CCCCCC" stroke="#666666">
+            <rect x="20" y="20" width="24" height="40"/><rect x="46" y="20" width="24" height="40"/><rect x="72" y="20" width="24" height="40"/><rect x="98" y="20" width="24" height="40"/><rect x="124" y="20" width="24" height="40"/><rect x="150" y="20" width="24" height="40"/><rect x="176" y="20" width="24" height="40"/><rect x="202" y="20" width="24" height="40"/><rect x="228" y="20" width="24" height="40"/><rect x="254" y="20" width="24" height="40"/>
+          </g>
+          <!-- 03 与 47 高亮 -->
+          <rect x="72" y="20" width="24" height="40" fill="#FFCC99" stroke="#CC6600"/>
+          <rect x="228" y="20" width="24" height="40" fill="#FFCC99" stroke="#CC6600"/>
+          <text x="84" y="72" text-anchor="middle" font-size="9" fill="#CC6600">03</text>
+          <text x="240" y="72" text-anchor="middle" font-size="9" fill="#CC6600">47</text>
+          <text x="150" y="100" text-anchor="middle" font-size="11" fill="#666666">器材室</text>
+          <text x="150" y="118" text-anchor="middle" font-size="9" fill="#999999">03 号柜与 47 号柜之间，好像有道缝</text>
+        </svg>
+        <div style="text-align:center;">
+          <input type="password" id="pwd" maxlength="4" placeholder="四位密码" style="padding:6px 8px;font-size:14px;width:120px;letter-spacing:4px;text-align:center;border:1px solid #006600;font-family:'Courier New',monospace;">
+          <button class="phone-btn" style="margin-left:8px;" onclick="checkLock()">开柜</button>
+          <div class="status" id="lockStatus" style="margin-top:8px;"></div>
+          <div id="lockResult" style="display:none;margin-top:10px;">
+            <p style="color:#006600;font-weight:bold;margin:4px 0;">咔哒。夹层松动了。</p>
+            <p style="font-size:12px;color:#666;margin:4px 0;">里面有一个用塑料袋包着的本子。</p>
+            <a href="diary.html" style="display:inline-block;background:#006600;color:#FFFF00;padding:6px 18px;text-decoration:none;margin-top:6px;">→ 取出本子</a>
+          </div>
+        </div>
+      </div>
+    </td></tr>
+    <tr><th>校长室</th><td>0764-3829116</td></tr>
+  </table>
+
+  <div class="note">
+    如有档案查阅需求，请联系总务处陈老师，办公时间：周一至周五 8:30-17:00。<br>
+    来访请先至传达室登记。
+  </div>
+
+  <p style="text-align:center;margin-top:16px;"><a href="index.html">返回首页</a> ｜ <a href="yearbook.html">校庆专栏</a></p>
+</div>
+
+<script>
+// 器材室拍球音频：摩斯码 0347
+// 0 = -----   3 = ...--   4 = ....-   7 = --...
+// 轻拍 = dit (·)  重拍 = dah (-)
+// 数字间间隔加长
+function dialRoom() {
+  const btn = document.getElementById('dialBtn');
+  const st = document.getElementById('status');
+  if (btn.disabled) return;
+  btn.disabled = true;
+  st.textContent = '拨通中……请听器材室的声音';
+
+  const AudioContext = window.AudioContext || window.webkitAudioContext;
+  if (!AudioContext) {
+    st.textContent = '您的浏览器不支持音频，请换用现代浏览器。';
+    btn.disabled = false;
+    return;
+  }
+  const ctx = new AudioContext();
+
+  // 拍球声音合成器
+  function playBounce(time, strong) {
+    // 主体：低频冲击
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+    osc.type = 'sine';
+    osc.frequency.value = strong ? 90 : 130;
+    gain.gain.setValueAtTime(strong ? 1.2 : 0.6, time);
+    gain.gain.exponentialRampToValueAtTime(0.01, time + 0.12);
+    osc.connect(gain).connect(ctx.destination);
+    osc.start(time);
+    osc.stop(time + 0.12);
+
+    // 地板共振：噪声
+    const bufferSize = ctx.sampleRate * 0.08;
+    const buffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
+    const data = buffer.getChannelData(0);
+    for (let i = 0; i < bufferSize; i++) data[i] = (Math.random() * 2 - 1);
+    const noise = ctx.createBufferSource();
+    noise.buffer = buffer;
+    const ng = ctx.createGain();
+    const filter = ctx.createBiquadFilter();
+    filter.type = 'lowpass';
+    filter.frequency.value = strong ? 600 : 400;
+    ng.gain.setValueAtTime(strong ? 0.7 : 0.35, time);
+    ng.gain.exponentialRampToValueAtTime(0.01, time + 0.08);
+    noise.connect(filter).connect(ng).connect(ctx.destination);
+    noise.start(time);
+    noise.stop(time + 0.08);
+  }
+
+  // 摩斯序列：0 ----- / 3 ...-- / 4 ....- / 7 --...
+  const unitsPerChar = {
+    '0': [1,1,1,1,1],
+    '3': [0,0,0,1,1],
+    '4': [0,0,0,0,1],
+    '7': [1,1,0,0,0]
+  };
+  const chars = ['0','3','4','7'];
+  const DIT = 0.20;
+  const DAH = 0.40;
+  const GAP = 0.15;
+  const INTER_CHAR = 0.45;
+
+  let t = ctx.currentTime + 0.3;
+  for (let ci = 0; ci < chars.length; ci++) {
+    const arr = unitsPerChar[chars[ci]];
+    for (let ui = 0; ui < arr.length; ui++) {
+      playBounce(t, arr[ui] === 1);
+      t += (arr[ui] === 1 ? DAH : DIT) + GAP;
+    }
+    t += INTER_CHAR - GAP; // 字符间隔
+  }
+
+  // 环境白噪音（体育器材室混响感）
+  const envTime = t;
+  const envBufSize = ctx.sampleRate * 3;
+  const envBuf = ctx.createBuffer(1, envBufSize, ctx.sampleRate);
+  const envData = envBuf.getChannelData(0);
+  for (let i = 0; i < envBufSize; i++) envData[i] = (Math.random() * 2 - 1) * 0.03;
+  const envNoise = ctx.createBufferSource();
+  envNoise.buffer = envBuf;
+  const envGain = ctx.createGain();
+  envGain.gain.setValueAtTime(0, ctx.currentTime + 0.2);
+  envGain.gain.linearRampToValueAtTime(0.04, ctx.currentTime + 1.0);
+  envGain.gain.linearRampToValueAtTime(0.01, ctx.currentTime + 2.8);
+  envNoise.connect(envGain).connect(ctx.destination);
+  envNoise.start(ctx.currentTime + 0.2);
+  envNoise.stop(ctx.currentTime + 3.0);
+
+  setTimeout(() => {
+    st.textContent = '通话结束。器材室深处，好像有什么东西露出来了……';
+    document.getElementById('lockerArea').style.display = 'block';
+    btn.disabled = false;
+    ctx.close();
+  }, 4200);
+}
+
+function checkLock() {
+  var st = document.getElementById('lockStatus');
+  var res = document.getElementById('lockResult');
+  var input = document.getElementById('pwd').value;
+  if (input === atob('MDM0Nw==')) {
+    st.textContent = '';
+    res.style.display = 'block';
+  } else {
+    st.textContent = '锁纹丝不动。';
+    res.style.display = 'none';
+  }
+}
+</script>
+<div style="text-align:center;font-size:12px;color:#666666;padding:8px;">｜ <a href="https://space.bilibili.com/11015701" target="_blank">作者B站</a></div>
+<script src="state.js"></script>
+<script>YA.applyEnding('contact');</script>
+</body>
+</html>
