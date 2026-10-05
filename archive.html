@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>档案管理员后台 - 云爱小学</title>
+<style>
+  body { background:#1A1A2E; font-family:"Courier New","宋体",monospace; color:#E0E0E0; margin:0; padding:20px; }
+  .wrap { width:800px; margin:0 auto; background:#0F0F1A; border:2px solid #FF6B35; padding:30px; box-shadow:0 0 40px rgba(255,107,53,.15); }
+  .header { border-bottom:2px solid #FF6B35; padding-bottom:14px; margin-bottom:20px; }
+  .header h1 { color:#FF6B35; font-size:20px; margin:0; letter-spacing:2px; }
+  .header p { color:#888; font-size:12px; margin:4px 0 0; }
+  .section { margin-bottom:20px; padding:14px; background:#16213E; border:1px solid #0F3460; }
+  .section h3 { color:#FF6B35; font-size:14px; margin:0 0 10px; }
+  .file-list { font-size:13px; line-height:2; }
+  .file-list span { color:#4ECCA3; }
+  .file-list .redact { color:#CF1322; }
+  .choice-area { text-align:center; margin:24px 0; }
+  .choice-btn { display:inline-block; width:180px; margin:0 10px; padding:14px 10px; background:#0F3460; color:#FFF; border:2px solid #4ECCA3; cursor:pointer; font-family:inherit; font-size:14px; text-align:center; }
+  .choice-btn:hover { background:#4ECCA3; color:#0F0F1A; }
+  .choice-btn small { display:block; font-size:11px; margin-top:6px; color:#AAA; }
+  .choice-btn small:hover { color:#0F0F1A; }
+  .locked { color:#666; text-align:center; padding:40px; }
+  .result-box { display:none; margin-top:20px; padding:16px; border:2px solid #4ECCA3; background:#0F0F1A; }
+  .result-box h4 { color:#4ECCA3; margin:0 0 10px; }
+  .result-box p { font-size:13px; line-height:1.8; }
+  .result-box .link { color:#FF6B35; }
+  .footer { text-align:center; font-size:11px; color:#555; margin-top:24px; border-top:1px solid #333; padding-top:12px; }
+  a { color:#4ECCA3; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="header">
+    <h1>▣ 云爱小学档案管理系统 v1.3</h1>
+    <p>INTERNAL USE ONLY · 内部资料 请勿外传 · 登录时间：<span id="loginTime"></span></p>
+  </div>
+
+  <div id="locked" class="locked">
+    <p>正在验证访问权限……</p>
+    <p style="font-size:12px;">本页面仅在完成特定事件后开放。</p>
+  </div>
+
+  <div id="main" style="display:none;">
+    <div class="section">
+      <h3>■ 待处理档案包：YA-2004-P7（证据包）</h3>
+      <div class="file-list">
+        <span>✓</span> 体罚记录（32页）<br>
+        <span>✓</span> 器材室出入登记（2004年9-10月）<br>
+        <span>✓</span> 码头照片（2004年10月14日 22:31）<br>
+        <span class="redact">✗</span> 录音文件（涉及案外人员，是否公开待投票决定）
+      </div>
+    </div>
+
+    <div class="section">
+      <h3>■ 你的选择</h3>
+      <p style="font-size:13px;color:#AAA;line-height:1.8;">
+        你们找到了这里。证据就在上面。<br>
+        现在，档案怎么处理，由你们决定。选择之后，这个网站——以及所有相关人员——会记住这个决定。
+      </p>
+      <div class="choice-area">
+        <div class="choice-btn" onclick="choose('A')">
+          A. 全量公开<br>
+          <small>包括录音。真相完整，但会伤害无辜者。</small>
+        </div>
+        <div class="choice-btn" onclick="choose('B')">
+          B. 剪辑公开<br>
+          <small>录音封存。只公开能定罪的证据。</small>
+        </div>
+        <div class="choice-btn" onclick="choose('C')">
+          C. 放弃公开<br>
+          <small>关闭档案。让一切保持原样。</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="result-box" id="resultA">
+      <h4>【已选择：A. 全量公开】</h4>
+      <p>证据包已打包发送至司法机关、媒体及所有公开渠道。<br>
+      录音文件已同步公开。<br>
+      系统提示：部分数据可能引发不可控后果。<br><br>
+      <a href="ending.html" class="link">→ 查看结局详情</a>　<a href="index.html" class="link">→ 返回首页，看看学校变成了什么样</a>　<a href="walkthrough.html" class="link">→ 查看解谜记录</a></p>
+    </div>
+
+    <div class="result-box" id="resultB">
+      <h4>【已选择：B. 剪辑公开】</h4>
+      <p>体罚记录、出入登记、码头照片已发送至司法机关。<br>
+      录音文件已加密封存，密钥由第三方托管。<br>
+      系统提示：真相得以伸张，无辜者得到保护。<br><br>
+      <a href="ending.html" class="link">→ 查看结局详情</a>　<a href="index.html" class="link">→ 返回首页，看看学校变成了什么样</a>　<a href="walkthrough.html" class="link">→ 查看解谜记录</a></p>
+    </div>
+
+    <div class="result-box" id="resultC">
+      <h4>【已选择：C. 放弃公开】</h4>
+      <p>证据包已关闭。链接已失效。<br>
+      系统提示：数据未被销毁，但访问权限已收回。<br><br>
+      <a href="ending.html" class="link">→ 查看结局详情</a>　<a href="index.html" class="link">→ 返回首页，看看学校变成了什么样</a>　<a href="walkthrough.html" class="link">→ 查看解谜记录</a></p>
+    </div>
+  </div>
+
+  <div class="footer">
+    云爱小学档案管理系统 · 本系统由总务处维护 · 页面最后更新：2005-03-12 ｜ <a href="https://space.bilibili.com/11015701" target="_blank">作者B站</a>
+  </div>
+</div>
+
+<script src="state.js"></script>
+<script>
+(function() {
+  document.getElementById('loginTime').textContent = new Date().toLocaleString('zh-CN');
+
+  // 解锁条件：localStorage.YA_unlock === '1' 或 URL 参数 ?unlock=1
+  var unlocked = false;
+  try { unlocked = localStorage.getItem('YA_unlock') === '1'; } catch(e) {}
+  if (window.location.search.indexOf('unlock=1') > -1) {
+    unlocked = true;
+    try { localStorage.setItem('YA_unlock', '1'); } catch(e) {}
+  }
+
+  if (unlocked) {
+    document.getElementById('locked').style.display = 'none';
+    document.getElementById('main').style.display = 'block';
+    // 已有结局时：显示当前结局 + 重置按钮
+    if (YA.getState() === 'ended') {
+      var et = YA.getEndingText();
+      if (et) {
+        var notice = document.createElement('div');
+        notice.style.cssText = 'background:#222;border:1px solid ' + et.color + ';padding:12px;margin-bottom:16px;font-size:13px;';
+        notice.innerHTML = '当前结局：<b style="color:' + et.color + ';">' + et.title + '</b>　　<a href="#" onclick="resetEnding();return false;" style="color:#888;">[重置结局]</a>';
+        var main = document.getElementById('main');
+        main.insertBefore(notice, main.children[1] || null);
+      }
+    }
+  } else {
+    // 未解锁时，3秒后显示提示
+    setTimeout(function() {
+      document.getElementById('locked').innerHTML = '<p>访问被拒绝。</p><p style="font-size:12px;">提示：完成主线事件后，此处将自动开放。</p>';
+    }, 1500);
+  }
+
+  window.resetEnding = function() {
+    if (confirm('确定要清除已选择的结局吗？\n全站将恢复到「结局未定」状态。')) {
+      YA.clearEnding();
+      location.href = 'index.html';
+    }
+  };
+
+  window.choose = function(c) {
+    if (YA.getState() === 'ended') {
+      alert('你已经做出过选择了。');
+      return;
+    }
+    YA.setEnding(c);
+    document.getElementById('resultA').style.display = 'none';
+    document.getElementById('resultB').style.display = 'none';
+    document.getElementById('resultC').style.display = 'none';
+    document.getElementById('result' + c).style.display = 'block';
+  };
+})();
+</script>
+</body>
+</html>
