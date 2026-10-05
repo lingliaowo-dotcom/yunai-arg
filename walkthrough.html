@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>解谜记录 - 云爱小学</title>
+<style>
+  body { background:#1A1A2E; font-family:"PingFang SC","Microsoft YaHei",sans-serif; margin:0; padding:20px; }
+  .wrap { width:720px; margin:0 auto; }
+  .header { text-align:center; padding:20px 0; border-bottom:2px solid #4ECCA3; margin-bottom:24px; }
+  .header h1 { color:#4ECCA3; font-size:22px; margin:0; letter-spacing:4px; }
+  .header p { color:#888; font-size:12px; margin-top:6px; }
+  .step { background:#0F0F1A; border:1px solid #333; border-left:4px solid #4ECCA3; padding:18px; margin-bottom:16px; }
+  .step h3 { color:#4ECCA3; font-size:15px; margin:0 0 10px; }
+  .step .tag { display:inline-block; background:#333; color:#AAA; font-size:10px; padding:2px 6px; margin-right:6px; border-radius:3px; }
+  .step p { color:#CCC; font-size:13px; line-height:1.9; margin:8px 0; }
+  .step .code { background:#16213E; color:#FF6B35; padding:2px 6px; font-family:"Courier New",monospace; font-size:12px; }
+  .step .result { color:#4ECCA3; font-size:12px; border-top:1px dashed #333; padding-top:8px; margin-top:8px; }
+  .step .result b { color:#FF6B35; }
+  .step .go { display:inline-block; margin-top:8px; color:#99CCFF; font-size:12px; text-decoration:none; border:1px solid #99CCFF; padding:3px 10px; }
+  .ending-link { display:block; text-align:center; background:#4ECCA3; color:#0F0F1A; padding:14px; text-decoration:none; font-weight:bold; font-size:15px; margin:30px 0; }
+  .ending-link:hover { background:#3DBB92; }
+  .nav-back { text-align:center; margin-top:20px; }
+  .nav-back a { color:#4ECCA3; text-decoration:none; border:1px solid #4ECCA3; padding:8px 20px; font-size:13px; }
+</style>
+</head>
+<body>
+<div class="wrap" id="wtContent">
+  <div class="header">
+    <h1>解 谜 记 录</h1>
+    <p>热搜调查团 · 内部整理 · 含剧透，未通关者勿入</p>
+  </div>
+
+  <div class="step">
+    <h3>第 1 步：藏头字幕</h3>
+    <p><span class="tag">观察</span> 云爱小学官网，2005 年风格，滚动字幕六句话。读起来很普通，但每句第一个字连起来是——</p>
+    <p style="text-align:center;font-size:18px;color:#4ECCA3;">去 校 友 录 看 看</p>
+    <div class="result"><b>结果：</b>指向 <span class="code">alumni.html</span>。有人故意把路标藏在了最显眼的地方。</div>
+    <a class="go" href="index.html">→ 去首页看字幕</a>
+  </div>
+
+  <div class="step">
+    <h3>第 2 步：404 的秘密</h3>
+    <p><span class="tag">技术</span> 校友录显示 404。但右键查看源代码，HTML 注释里有一串字符：</p>
+    <p style="text-align:center;font-family:monospace;font-size:12px;word-break:break-all;">5qCh5bqG57qq5b+15YaM5Zyo56ysM+mYheiniOWupA==</p>
+    <p>Base64 解码：<span class="code">校庆纪念册在第3阅览室</span></p>
+    <div class="result"><b>结果：</b>指向 <span class="code">yearbook.html</span>。404 不是死路，是暗门。</div>
+    <a class="go" href="alumni.html">→ 去看 404 页面</a>
+  </div>
+
+  <div class="step">
+    <h3>第 3 步：被涂黑的第 34 号</h3>
+    <p><span class="tag">发现</span> 纪念册里三年二班名单共 35 人。第 34 号姓名和性别被黑块涂掉，备注栏写着「转学」。</p>
+    <p>再看毕业合影——第三排左起第二个人脸，被刮花了。</p>
+    <p>宋雪是 33 号。那个被涂黑的人，就坐在她旁边。</p>
+    <div class="result"><b>结果：</b>有个学生被从记录里抹掉了。不是转学，是失踪。</div>
+    <a class="go" href="yearbook.html">→ 去看纪念册</a>
+  </div>
+
+  <div class="step">
+    <h3>第 4 步：时间对不上</h3>
+    <p><span class="tag">交叉验证</span> 纪念册底部小字：「数字化备注：YA-2004-P7，地址 PIER-7，2004年6月30日」。</p>
+    <p>校庆是 5 月 18 日。为什么扫描日期是 6 月 30 日？PIER-7 是哪里？</p>
+    <p>查地图：雾港第七码头。</p>
+    <div class="result"><b>结果：</b>这批档案在码头被「处理」过。有人把学校的东西，带到了不该去的地方。</div>
+  </div>
+
+  <div class="step">
+    <h3>第 5 步：拍球的声音与储物柜</h3>
+    <p><span class="tag">音频</span> 「联系我们」页面，体育器材室分机 052。点击「拨通」，没有语音，只有拍球声。</p>
+    <p>轻重交替。轻的记作 ·，重的记作 —。四组数字：</p>
+    <p style="text-align:center;font-family:monospace;font-size:16px;color:#FF6B35;">----- ...-- ....- --...</p>
+    <p>摩斯码：<span class="code">0347</span></p>
+    <p><span class="tag">密码</span> 通话结束后，器材室平面图浮现——03 号柜与 47 号柜之间有道缝。输入 <span class="code">0347</span>。</p>
+    <p>咔哒。夹层松动了。里面有一个用塑料袋包着的本子。</p>
+
+    <!-- 可交互演示：储物柜平面图 -->
+    <div style="margin:14px 0;padding:14px;border:1px dashed #4ECCA3;background:#101020;">
+      <div style="color:#4ECCA3;font-size:12px;text-align:center;margin-bottom:8px;">▍互动演示 · 器材室平面图</div>
+      <svg width="300" height="150" viewBox="0 0 300 150" style="display:block;margin:0 auto 10px;">
+        <rect width="300" height="150" fill="#1A1A2E" stroke="#4ECCA3"/>
+        <g fill="#2A2A3A" stroke="#555555">
+          <rect x="20" y="20" width="24" height="40"/><rect x="46" y="20" width="24" height="40"/><rect x="98" y="20" width="24" height="40"/><rect x="124" y="20" width="24" height="40"/><rect x="150" y="20" width="24" height="40"/><rect x="176" y="20" width="24" height="40"/><rect x="202" y="20" width="24" height="40"/><rect x="254" y="20" width="24" height="40"/>
+        </g>
+        <rect id="cab03" x="72" y="20" width="24" height="40" fill="#FF6B35" stroke="#FF6B35" opacity="0.4" style="cursor:pointer;"/>
+        <rect id="cab47" x="228" y="20" width="24" height="40" fill="#FF6B35" stroke="#FF6B35" opacity="0.4" style="cursor:pointer;"/>
+        <text x="84" y="72" text-anchor="middle" font-size="9" fill="#FF6B35">03</text>
+        <text x="240" y="72" text-anchor="middle" font-size="9" fill="#FF6B35">47</text>
+        <text x="150" y="100" text-anchor="middle" font-size="11" fill="#888888">器材室</text>
+        <text id="seamHint" x="150" y="118" text-anchor="middle" font-size="9" fill="#555555">03 号柜与 47 号柜之间，好像有道缝</text>
+        <!-- 夹层：密码正确后显现 -->
+        <g id="seam" style="display:none;">
+          <line x1="148" y1="20" x2="148" y2="60" stroke="#FFD700" stroke-width="2" stroke-dasharray="3,2"/>
+          <line x1="152" y1="20" x2="152" y2="60" stroke="#FFD700" stroke-width="2" stroke-dasharray="3,2"/>
+          <rect id="bag" x="138" y="30" width="24" height="16" rx="3" fill="none" stroke="#F5E6C8" stroke-width="1.5" style="display:none;"/>
+          <text id="bagText" x="150" y="41" text-anchor="middle" font-size="8" fill="#F5E6C8" style="display:none;">本子</text>
+        </g>
+      </svg>
+      <div style="text-align:center;">
+        <input type="password" id="demoPwd" maxlength="4" placeholder="四位密码" style="background:#1A1A2E;border:1px solid #555555;color:#4ECCA3;padding:6px 8px;font-size:14px;width:120px;letter-spacing:4px;text-align:center;font-family:'Courier New',monospace;">
+        <button onclick="demoLock()" style="background:#4ECCA3;color:#0F0F1A;border:none;padding:6px 16px;margin-left:8px;cursor:pointer;font-family:inherit;font-size:13px;">开柜</button>
+        <div id="demoStatus" style="color:#FF6B35;font-size:12px;margin-top:8px;height:1.2em;"></div>
+        <div id="demoResult" style="display:none;margin-top:8px;color:#4ECCA3;font-size:13px;">
+          咔哒。夹层松动了。<a href="diary.html" style="color:#FF6B35;">→ 取出本子</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="result"><b>结果：</b>解锁 <span class="code">diary.html</span>。林满的日记，共 8 页，可辨认 4 页。</div>
+    <a class="go" href="contact.html">→ 去拨电话开柜</a>
+  </div>
+
+  <div class="step">
+    <h3>第 6 步：最后一页</h3>
+    <p><span class="tag">日记</span> P.8，10 月 14 日。林满写道：</p>
+    <p style="border-left:3px solid #FF6B35;padding-left:14px;color:#AAA;font-style:italic;">「他们把纸箱搬上船……陈老师也在。他数箱子，在本子上记数。他看见我了。他说，看见的人要站到天黑。可天黑了，码头有灯。」</p>
+    <p>第二天，10 月 15 日，学校发了《关于加强学生晚间留校管理的通知》：器材室每日 18:00 上锁。</p>
+    <div class="result"><b>结果：</b>林满看见了不该看的东西。然后他就「转学」了。</div>
+    <a class="go" href="diary.html">→ 去读日记</a>
+  </div>
+
+  <div class="step">
+    <h3>第 7 步：爆料邮箱</h3>
+    <p><span class="tag">终局</span> 把日记页码和日期发给爆料邮箱：<span class="code">081014</span>。</p>
+    <p>收到 PGP 签名回信。密钥指纹末 12 位，两两分组，十六进制解读——</p>
+    <p style="text-align:center;color:#4ECCA3;font-size:16px;">周五 20:00 · 看热搜</p>
+    <div class="result"><b>结果：</b>直播时间。林满要现身了。</div>
+    <a class="go" href="mail.html">→ 去发邮件</a>
+  </div>
+
+  <div class="step">
+    <h3>第 8 步：034710148</h3>
+    <p><span class="tag">抉择</span> 证据包云盘链接公开。密码 = 学号 + 日期 + 页数：</p>
+    <p style="text-align:center;font-family:monospace;font-size:20px;color:#FF6B35;">0347 - 1014 - 8</p>
+    <p>云盘里有四样东西。第四样是一段录音——能钉死案子，但会伤害一个无辜的人。点开它，你会听到海浪，铁链，和那句「看见的人要站到天黑」。</p>
+
+    <!-- 可交互演示：证据包云盘 -->
+    <div style="margin:14px 0;padding:14px;border:1px dashed #4ECCA3;background:#101020;">
+      <div style="color:#4ECCA3;font-size:12px;text-align:center;margin-bottom:8px;">▍互动演示 · 证据包云盘</div>
+      <div id="cloudLock" style="text-align:center;">
+        <input type="password" id="cloudPwd" maxlength="10" placeholder="输入提取码" style="background:#1A1A2E;border:1px solid #555555;color:#4ECCA3;padding:6px 8px;font-size:14px;width:140px;letter-spacing:2px;text-align:center;font-family:'Courier New',monospace;">
+        <button onclick="cloudUnlock()" style="background:#4ECCA3;color:#0F0F1A;border:none;padding:6px 16px;margin-left:8px;cursor:pointer;font-family:inherit;font-size:13px;">提取</button>
+        <div id="cloudStatus" style="color:#FF6B35;font-size:12px;margin-top:8px;height:1.2em;"></div>
+      </div>
+      <div id="cloudFiles" style="display:none;">
+        <table style="width:100%;border-collapse:collapse;font-size:12px;color:#CCCCCC;">
+          <tr style="border-bottom:1px solid #333355;"><td style="padding:6px;">1_器材室出入登记_2003-2004.pdf</td><td style="text-align:right;">2.1 MB</td></tr>
+          <tr style="border-bottom:1px solid #333355;"><td style="padding:6px;">2_校务会议记录_节选.pdf</td><td style="text-align:right;">860 KB</td></tr>
+          <tr style="border-bottom:1px solid #333355;"><td style="padding:6px;">3_医疗证明与转账回单.zip</td><td style="text-align:right;">5.4 MB</td></tr>
+          <tr><td style="padding:6px;color:#FF6B35;">4_20041014_第七码头_录音.mp3 <button id="recBtn" onclick="toggleRec()" style="background:none;border:1px solid #FF6B35;color:#FF6B35;font-size:11px;padding:2px 8px;cursor:pointer;margin-left:8px;font-family:inherit;">▶ 播放</button></td><td style="text-align:right;">3.3 MB</td></tr>
+        </table>
+        <div id="recSub" style="display:none;margin-top:10px;padding:10px;border:1px solid #FF6B35;background:#1A0F0F;font-size:12px;color:#CCCCCC;line-height:1.9;min-height:60px;"></div>
+        <div style="text-align:center;margin-top:12px;"><a href="archive.html?unlock=1" style="color:#4ECCA3;font-size:13px;">→ 前往档案管理员后台，做出选择</a></div>
+      </div>
+    </div>
+
+    <div class="result"><b>结果：</b>选择权在你手里。A / B / C，每个选择都会改变这个网站。</div>
+    <a class="go" href="archive.html?unlock=1">→ 打开云盘</a>
+  </div>
+
+  <div class="step">
+    <h3>第 9 步：三个结局</h3>
+    <p><span class="tag">抉择</span> 档案管理员后台开放。三个按钮，按下任何一个，全站的页面都会随之改变：</p>
+
+    <!-- 可交互演示：三结局选择 -->
+    <div style="margin:14px 0;padding:14px;border:1px dashed #4ECCA3;background:#101020;">
+      <div style="color:#4ECCA3;font-size:12px;text-align:center;margin-bottom:10px;">▍互动演示 · 结局预览（点击按钮查看后果，不会真正写入）</div>
+      <div style="text-align:center;">
+        <button onclick="previewEnding('A')" id="pvA" style="background:none;border:1px solid #FF6B35;color:#FF6B35;padding:6px 18px;margin:0 6px;cursor:pointer;font-family:inherit;font-size:13px;">A · 全量公开</button>
+        <button onclick="previewEnding('B')" id="pvB" style="background:none;border:1px solid #4ECCA3;color:#4ECCA3;padding:6px 18px;margin:0 6px;cursor:pointer;font-family:inherit;font-size:13px;">B · 剪辑公开</button>
+        <button onclick="previewEnding('C')" id="pvC" style="background:none;border:1px solid #888888;color:#AAAAAA;padding:6px 18px;margin:0 6px;cursor:pointer;font-family:inherit;font-size:13px;">C · 放弃公开</button>
+      </div>
+      <div id="pvBox" style="display:none;margin-top:12px;padding:10px 12px;border:1px solid #333355;background:#0F0F1A;font-size:12px;line-height:1.9;color:#CCCCCC;"></div>
+    </div>
+
+    <div class="result"><b>结果：</b>无论选哪个，「谢谢你来过」这句话都会出现在某个角落。区别只在于——以什么方式。</div>
+    <a class="go" href="archive.html?unlock=1">→ 去做真正的选择</a>
+  </div>
+
+  <div class="step">
+    <h3>第 10 步：尾声 · 第三块砖</h3>
+    <p><span class="tag">回忆</span> 一切结束之后，宋雪回了一趟学校。</p>
+    <p>篮球场东墙下有五块砖。YA-0347 在评论区问过：「篮球场东边第三块砖，你还记得吗？」——那是他们的「失物招领处」。</p>
+    <p style="border-left:3px solid #FF6B35;padding-left:14px;color:#AAA;font-style:italic;">她蹲下去，把第三块砖掀开。下面有一个塑料袋，袋子里是半块橡皮，蓝粉双色，切面还很新。<br>她把自己留了二十二年的那半块拿出来，拼上去。严丝合缝。</p>
+    <p style="text-align:center;color:#4ECCA3;font-size:14px;">「橡皮我埋回去了。」</p>
+    <p style="text-align:center;color:#666666;font-size:12px;">两半橡皮，拼上了。</p>
+    <div class="result"><b>结果：</b>所有谜题解完了。这个网站记住了你——也记住了他。</div>
+  </div>
+
+  <div class="step">
+    <h3>第 11 步：回声 · 到。</h3>
+    <p><span class="tag">回声</span> 最后的最后，去留言板写点什么吧。</p>
+    <p>有人说，如果你在留言里打出那个学号，会收到一声回答。二十二年了，点名册前终于有人应到。</p>
+
+    <!-- 可交互演示：留言回声 -->
+    <div style="margin:14px 0;padding:14px;border:1px dashed #4ECCA3;background:#101020;">
+      <div style="color:#4ECCA3;font-size:12px;text-align:center;margin-bottom:8px;">▍互动演示 · 留言板</div>
+      <div style="text-align:center;">
+        <input type="text" id="echoMsg" maxlength="40" placeholder="写一句留言……" style="background:#1A1A2E;border:1px solid #555555;color:#E0E0E0;padding:6px 10px;font-size:13px;width:60%;font-family:inherit;">
+        <button onclick="echoSend()" style="background:#4ECCA3;color:#0F0F1A;border:none;padding:6px 16px;margin-left:8px;cursor:pointer;font-family:inherit;font-size:13px;">留言</button>
+      </div>
+      <div id="echoList" style="margin-top:12px;font-size:12px;line-height:2;color:#CCCCCC;"></div>
+    </div>
+
+    <div class="result"><b>结果：</b>热搜会掉出前 50，但有人记得 0347。你也成为了记得的人。</div>
+    <a class="go" href="guestbook.html">→ 去真正的留言板</a>
+  </div>
+
+  <a href="archive.html?unlock=1" class="ending-link">▶ 前往云盘，做出你的选择</a>
+
+  <div class="nav-back">
+    <a href="index.html">← 返回云爱小学首页</a>
+  </div>
+</div>
+<div style="text-align:center;font-size:12px;color:#666666;padding:8px;">｜ <a href="https://space.bilibili.com/11015701" target="_blank">作者B站</a></div>
+<script src="state.js"></script>
+<script>
+// 解谜记录门槛：完成全部解谜（已做出结局选择）后才可见
+(function () {
+  var done = !!YA.getChoice();
+  var content = document.getElementById('wtContent');
+  if (!done) {
+    content.style.display = 'none';
+    var lock = document.createElement('div');
+    lock.className = 'wrap';
+    lock.innerHTML =
+      '<div class="header"><h1>解 谜 记 录</h1><p>热搜调查团 · 内部整理</p></div>' +
+      '<div class="step" style="text-align:center;padding:40px 20px;">' +
+      '<p style="font-size:40px;margin:0;">🔒</p>' +
+      '<p style="color:#FF6B35;font-size:16px;margin:14px 0 6px;">此记录尚未解锁</p>' +
+      '<p style="color:#888;font-size:13px;line-height:2;">含完整剧透。请先在官网完成全部解谜，<br>并在档案管理员后台做出你的选择（A / B / C）。</p>' +
+      '<p style="margin-top:20px;"><a href="index.html" style="color:#4ECCA3;text-decoration:none;border:1px solid #4ECCA3;padding:8px 20px;font-size:13px;">← 回到云爱小学</a></p>' +
+      '</div>';
+    document.body.insertBefore(lock, content);
+  } else {
+    YA.applyEnding('');
+  }
+})();
+</script>
+<script>
+function demoLock() {
+  var st = document.getElementById('demoStatus');
+  var res = document.getElementById('demoResult');
+  var input = document.getElementById('demoPwd').value;
+  if (input === atob('MDM0Nw==')) {
+    st.textContent = '';
+    // 夹层显现 → 本子滑出
+    var seam = document.getElementById('seam');
+    seam.style.display = 'block';
+    setTimeout(function () {
+      document.getElementById('bag').style.display = 'block';
+      document.getElementById('bagText').style.display = 'block';
+      document.getElementById('seamHint').textContent = '夹层里有一个塑料袋，包着一个本子。';
+      document.getElementById('seamHint').setAttribute('fill', '#F5E6C8');
+      res.style.display = 'block';
+    }, 800);
+  } else {
+    st.textContent = '锁纹丝不动。';
+    res.style.display = 'none';
+    // 输入框抖动反馈
+    var pwd = document.getElementById('demoPwd');
+    pwd.style.borderColor = '#FF6B35';
+    var shakes = 0;
+    var shakeTimer = setInterval(function () {
+      pwd.style.transform = (shakes % 2 === 0) ? 'translateX(-3px)' : 'translateX(3px)';
+      if (++shakes >= 6) {
+        clearInterval(shakeTimer);
+        pwd.style.transform = '';
+      }
+    }, 60);
+  }
+}
+// 点击 03 / 47 号柜：预先显露缝隙提示
+['cab03', 'cab47'].forEach(function (id) {
+  var cab = document.getElementById(id);
+  if (!cab) return;
+  cab.addEventListener('click', function () {
+    cab.setAttribute('opacity', '0.8');
+    var hint = document.getElementById('seamHint');
+    hint.textContent = '两个柜子之间，夹着一道缝。';
+    hint.setAttribute('fill', '#FFD700');
+  });
+});
+// 回车提交
+document.getElementById('demoPwd').addEventListener('keydown', function (e) {
+  if (e.key === 'Enter') demoLock();
+});
+function cloudUnlock() {
+  var st = document.getElementById('cloudStatus');
+  if (document.getElementById('cloudPwd').value === atob('MDM0NzEwMTQ4')) {
+    document.getElementById('cloudLock').style.display = 'none';
+    document.getElementById('cloudFiles').style.display = 'block';
+  } else {
+    st.textContent = '提取码错误。';
+  }
+}
+var recCtx = null, recNodes = [], recTimer = null, recPlaying = false;
+var recLines = [
+  [3,  '[00:03] 海浪，铁链碰撞。'],
+  [11, '[00:11] 「……都数清楚了？二十二箱。」'],
+  [19, '[00:19] 「陈老师，都齐了。就是……好像有人看见了。」'],
+  [27, '[00:27] 沉默。脚步声靠近。'],
+  [34, '[00:34] 「看见的人，要站到天黑。」'],
+  [41, '[00:41] 电流杂音，录音中断。']
+];
+function startSea(ctx) {
+  var len = ctx.sampleRate * 2, buf = ctx.createBuffer(1, len, ctx.sampleRate), d = buf.getChannelData(0);
+  for (var i = 0; i < len; i++) d[i] = Math.random() * 2 - 1;
+  var src = ctx.createBufferSource(); src.buffer = buf; src.loop = true;
+  var f = ctx.createBiquadFilter(); f.type = 'lowpass'; f.frequency.value = 400;
+  var g = ctx.createGain(); g.gain.value = 0.06;
+  var lfo = ctx.createOscillator(); lfo.frequency.value = 0.15;
+  var lg = ctx.createGain(); lg.gain.value = 0.03;
+  lfo.connect(lg); lg.connect(g.gain);
+  src.connect(f); f.connect(g); g.connect(ctx.destination);
+  src.start(); lfo.start();
+  return [src, lfo];
+}
+function playClank(ctx, delay) {
+  var t = ctx.currentTime + delay;
+  [1318, 880, 587].forEach(function (fr, i) {
+    var o = ctx.createOscillator(), g = ctx.createGain();
+    o.frequency.value = fr * (0.98 + Math.random() * 0.04);
+    g.gain.setValueAtTime(0.05 / (i + 1), t);
+    g.gain.exponentialRampToValueAtTime(0.0001, t + 1.2);
+    o.connect(g); g.connect(ctx.destination);
+    o.start(t); o.stop(t + 1.3);
+  });
+}
+function toggleRec() {
+  var btn = document.getElementById('recBtn'), sub = document.getElementById('recSub');
+  if (!recPlaying) {
+    recCtx = recCtx || new (window.AudioContext || window.webkitAudioContext)();
+    recNodes = startSea(recCtx);
+    recPlaying = true; sub.style.display = 'block'; sub.innerHTML = '';
+    btn.textContent = '■ 停止';
+    var t0 = Date.now(), chainTimer;
+    function clank() { playClank(recCtx, 0); chainTimer = setTimeout(clank, 9000); recNodes.push({ stop: function () { clearTimeout(chainTimer); } }); }
+    clank();
+    var shown = 0;
+    recTimer = setInterval(function () {
+      var el = (Date.now() - t0) / 1000;
+      while (shown < recLines.length && recLines[shown][0] <= el) {
+        sub.innerHTML += recLines[shown][1] + '<br>'; shown++;
+      }
+      if (el >= 47) toggleRec();
+    }, 200);
+  } else {
+    recNodes.forEach(function (n) { try { n.stop(); } catch (e) {} });
+    clearInterval(recTimer);
+    recPlaying = false;
+    btn.textContent = '▶ 重播';
+  }
+}
+var pvData = {
+  A: '<b style="color:#FF6B35;">A · 全量公开</b><br>· 首页与新闻中心置顶红框通报，案件移送司法机关<br>· 纪念册第 34 号恢复为「林满」，合影金框，「档案已解封」<br>· 校友录 404 变为 CLOSED，登录入口彻底关闭<br>· 器材室显示「已被司法机关查封」<br>· 代价：那段录音里的无辜者，被卷进了舆论。',
+  B: '<b style="color:#4ECCA3;">B · 剪辑公开（真结局）</b><br>· 通报置顶，承诺「一查到底」<br>· 纪念册第 34 号恢复为「林满」，合影金框，「档案已补全」<br>· 校友录 404 变为 RESTORED，2004 届状态改为「已补录」<br>· 器材室显示「房间已清空」<br>· 录音被封存。码头的灯，还亮着。',
+  C: '<b style="color:#AAAAAA;">C · 放弃公开</b><br>· 首页滚动字幕只剩一句：「谢谢你们来过。」<br>· 纪念册第 34 号恢复为「林满」，但灰字注明「档案保持原样」<br>· 校友录维持 404，电话仍可拨通<br>· 一切看似没变——除了那个名字，回来了。'
+};
+function previewEnding(k) {
+  var box = document.getElementById('pvBox');
+  box.innerHTML = pvData[k];
+  box.style.display = 'block';
+  ['A', 'B', 'C'].forEach(function (x) {
+    document.getElementById('pv' + x).style.opacity = (x === k) ? '1' : '0.35';
+  });
+}
+function esc(s) { return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
+function echoSend() {
+  var input = document.getElementById('echoMsg');
+  var msg = input.value.trim();
+  if (!msg) return;
+  var list = document.getElementById('echoList');
+  list.innerHTML += '<div style="border-bottom:1px dashed #333355;padding:4px 0;">'
+    + '<span style="color:#99CCFF;">匿名网友</span>：' + esc(msg)
+    + ' <span style="color:#4ECCA3;font-size:10px;border:1px solid #4ECCA3;padding:0 4px;margin-left:6px;">审核通过</span></div>';
+  input.value = '';
+  if (msg.indexOf('0347') !== -1) {
+    setTimeout(function () {
+      list.innerHTML += '<div style="padding:4px 0;color:#4ECCA3;">'
+        + '<span style="color:#888888;">YA-0347</span>：到。</div>';
+      list.scrollTop = list.scrollHeight;
+    }, 1600);
+  }
+}
+</script>
+</body>
+</html>
