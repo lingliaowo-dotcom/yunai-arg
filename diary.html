@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<!-- 无题 ｜ 扫描件共8页，可辨认P.1/P.3/P.5/P.8 -->
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>拾获物品登记 No.0347</title>
+<style>
+  body { background:#3A3A3A; font-family:"宋体",serif; }
+  .desk { width:680px; margin:20px auto; }
+  .page { background:#F5F0E1; padding:34px 44px; margin:0 auto 30px; box-shadow:0 4px 18px rgba(0,0,0,.5); position:relative; line-height:2.1; font-size:15px; color:#333; }
+  .page::after { content:""; position:absolute; inset:0; pointer-events:none;
+    background:repeating-linear-gradient(transparent 0 33px, rgba(120,120,180,.25) 33px 34px); }
+  .pageno { position:absolute; bottom:10px; right:20px; font-size:12px; color:#999; }
+  .date { color:#666; font-size:13px; margin-bottom:10px; }
+  .torn { background:#D8D2C0; color:#8A8578; font-style:italic; }
+  .stamp { position:absolute; top:18px; right:24px; border:2px solid #AA3333; color:#AA3333; padding:2px 10px; font-size:12px; transform:rotate(8deg); opacity:.8; }
+  .meta { color:#BBBBBB; font-size:12px; text-align:center; margin-bottom:14px; font-family:"Courier New",monospace; }
+  a { color:#99CCFF; }
+  .backlink { text-align:center; margin-bottom:30px; }
+</style>
+</head>
+<body>
+<div class="desk">
+  <div class="meta">云爱小学总务处 · 拾获物品登记 No.0347 · 扫描件共 8 页 · 可辨认：P.1 / P.3 / P.5 / P.8</div>
+
+  <div class="page">
+    <div class="date">9月2日　星期四　晴</div>
+    今天转到云爱小学。雾港一直在下雨，今天晴了。<br>
+    我的学号是0347。老师说，号码排在最后的，就要坐在最后一排。<br>
+    同桌叫宋雪，她在桌子中间用粉笔划了一条线，说谁也不许过界。<br>
+    她借给我半块橡皮。线擦掉了一小段。
+    <div class="pageno">P.1</div>
+  </div>
+
+  <div class="page">
+    <div class="date">9月27日　星期一　阴</div>
+    陈老师的尺子是竹的，边缘起了毛。<br>
+    打手心其实不怎么疼。打手背很疼，因为骨头上没有肉。<br>
+    今天轮到我们组扫地，扫地的同学都看见了。他们都不说话。我也不怪他们。<br>
+    宋雪把她的饭盒推过来一半，过界了。我没有告诉她。
+    <div class="pageno">P.3</div>
+  </div>
+
+  <div class="page">
+    <div class="date">10月9日　星期六　雨</div>
+    器材室的锁是从外面锁的。里面很黑，高窗只有报纸那么大。<br>
+    但是里面有篮球。我拍篮球，拍一下，心里数一下，就不怕了。<br>
+    如果有人听见，就会来开门。<br>
+    没有人听见。<br>
+    <span class="torn">（此处被水浸过，无法辨认）</span>
+    <div class="pageno">P.5</div>
+  </div>
+
+  <div class="page">
+    <div class="stamp">最后记录</div>
+    <div class="date">10月14日　星期四　晴</div>
+    我又看见了。<br>
+    晚自习前去器材室还垫子，后门没锁。他们把纸箱搬上船，一箱一箱。码头的灯照得很亮，我数到第二十几箱就数不清了。<br>
+    陈老师也在。他数箱子，在本子上记数。他记账的样子，和记我们谁的作业没交一模一样。<br>
+    他看见我了。<br>
+    他说，看见的人要站到天黑。<br>
+    可天黑了，码头有灯。<br>
+    我明天还想去看看。看完这一次，我就告诉宋雪。她是我同桌，她应该会信我。
+    <div class="pageno">P.8</div>
+  </div>
+
+  <div class="backlink"><a href="locker.html">← 放回夹层</a></div>
+  <p style="text-align:center;"><a href="index.html">返回首页</a></p>
+
+  <div style="text-align:center;margin:20px 0 30px;">
+    <a href="mail.html" style="display:inline-block;background:#FF6B35;color:#FFF;padding:10px 24px;text-decoration:none;border:2px solid #CC5500;font-family:'Courier New',monospace;font-size:14px;">▶ 向爆料邮箱发送页码与日期</a>
+    <p style="font-size:11px;color:#888;margin-top:8px;">读完日记的人，知道该去哪里。</p>
+  </div>
+</div>
+<div style="text-align:center;font-size:12px;color:#666666;padding:8px;">｜ <a href="https://space.bilibili.com/11015701" target="_blank">作者B站</a></div>
+<script src="state.js"></script>
+<script>
+// 日记页也接入结局状态：结局后显示后续
+(function() {
+  var choice = YA.getChoice();
+  if (!choice) return;
+  var desk = document.querySelector('.desk');
+  if (!desk) return;
+  var div = document.createElement('div');
+  div.style.cssText = 'text-align:center;margin:20px 0 30px;padding:20px;background:#FFF8DC;border:2px dashed #CC6600;';
+  if (choice === 'A') {
+    div.innerHTML = '<p style="color:#990000;font-weight:bold;">【结局已定：全量公开】</p><p>这本日记已被扫描、公开、转发。林满的名字重新出现在所有报道里。</p><p><a href="ending.html" style="color:#CC6600;">查看完整结局 →</a></p>';
+  } else if (choice === 'B') {
+    div.innerHTML = '<p style="color:#006600;font-weight:bold;">【结局已定：剪辑公开】</p><p>这本日记作为证物被提交。林满的名字，终于回到了名单上。</p><p><a href="ending.html" style="color:#006600;">查看完整结局 →</a></p>';
+  } else {
+    div.innerHTML = '<p style="color:#666;font-weight:bold;">【结局已定：放弃公开】</p><p>这本日记被放回了器材室的夹层。下一次被发现，会是什么时候？</p><p><a href="ending.html" style="color:#666;">查看完整结局 →</a></p>';
+  }
+  desk.appendChild(div);
+})();
+</script>
+</body>
+</html>
